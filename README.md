@@ -122,9 +122,9 @@ npm run build
 
 ## Contact
 
-- **Email**: deepakmaurya.dev@gmail.com
-- **LinkedIn**: https://linkedin.com/in/deepakmaurya-dev
-- **GitHub**: https://github.com/deepakmaurya-dev
+- **Email**: deepakm124578@gmail.com
+- **LinkedIn**: https://linkedin.com/in/dkm4339
+- **GitHub**: https://github.com/dkm4339
 
 ---
 
