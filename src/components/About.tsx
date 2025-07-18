@@ -45,8 +45,8 @@ export default function About() {
           >
             <div className="w-80 h-80 mx-auto lg:mx-0 mb-8 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 hover:shadow-blue-400/30">
               <img
-                src="Deeeqqq..jpg"
-                alt="Deepak Maurya"
+                src="abhishek.jpeg"
+                alt="Abhishek Pandey"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -65,7 +65,7 @@ export default function About() {
               variants={fadeUp}
               custom={2}
             >
-              I'm a passionate Full Stack Developer currently pursuing BTech in IT at NIET, Greater Noida.
+              I'm a passionate Full Stack Developer currently pursuing BTech in CSE at LIET, Greater Noida.
               I've completed multiple projects using React, Node.js, PostgreSQL, and cloud services like AWS.
               I love building smart, scalable web apps and learning new technologies. My goal is to create
               innovative solutions that make a positive impact on users' lives.
@@ -92,7 +92,7 @@ export default function About() {
                 },
                 {
                   icon: "fas fa-graduation-cap",
-                  text: "BTech IT @ NIET Greater Noida",
+                  text: "BTech CSE @ LIET Greater Noida",
                 },
               ].map((item, index) => (
                 <motion.div

@@ -5,55 +5,45 @@ export default function Hero() {
   const controls = useAnimation();
 
   const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = 'Deepak Maurya New.pdf';
-    link.download = 'Deepak_Maurya_Resume.pdf';
+    const link = document.createElement("a");
+    link.href = "Resumes_.pdf";
+    link.download = "Resumes_.pdf";
     link.click();
   };
 
   const handleViewProjects = () => {
-    const element = document.getElementById('projects');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById("projects");
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Enhanced animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.12,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const slideUpVariant = {
-    hidden: { 
-      y: 60, 
-      opacity: 0,
-      scale: 0.8
-    },
+    hidden: { y: 60, opacity: 0, scale: 0.8 },
     visible: {
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: { 
-        type: "spring", 
+      transition: {
+        type: "spring",
         stiffness: 80,
         damping: 12,
-        mass: 1
-      }
-    }
+        mass: 1,
+      },
+    },
   };
 
   const letterVariant = {
-    hidden: { 
-      opacity: 0, 
-      y: 50,
-      rotateX: -90,
-      scale: 0.8
-    },
+    hidden: { opacity: 0, y: 50, rotateX: -90, scale: 0.8 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
@@ -64,17 +54,13 @@ export default function Hero() {
         duration: 0.6,
         ease: "easeOut",
         type: "spring",
-        stiffness: 100
-      }
-    })
+        stiffness: 100,
+      },
+    }),
   };
 
   const socialVariant = {
-    hidden: { 
-      scale: 0,
-      rotate: -180,
-      opacity: 0
-    },
+    hidden: { scale: 0, rotate: -180, opacity: 0 },
     visible: (i) => ({
       scale: 1,
       rotate: 0,
@@ -84,17 +70,13 @@ export default function Hero() {
         duration: 0.6,
         type: "spring",
         stiffness: 120,
-        damping: 10
-      }
-    })
+        damping: 10,
+      },
+    }),
   };
 
   const buttonVariant = {
-    hidden: { 
-      scale: 0,
-      y: 20,
-      opacity: 0
-    },
+    hidden: { scale: 0, y: 20, opacity: 0 },
     visible: (i) => ({
       scale: 1,
       y: 0,
@@ -104,12 +86,11 @@ export default function Hero() {
         duration: 0.5,
         type: "spring",
         stiffness: 100,
-        damping: 12
-      }
-    })
+        damping: 12,
+      },
+    }),
   };
 
-  // Background floating animation
   const floatingVariant = {
     animate: {
       y: [-20, 20, -20],
@@ -118,12 +99,11 @@ export default function Hero() {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
-  // Pulsing effect for accent elements
   const pulseVariant = {
     animate: {
       scale: [1, 1.05, 1],
@@ -131,18 +111,16 @@ export default function Hero() {
       transition: {
         duration: 3,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
-  // Start animation sequence
   useEffect(() => {
     controls.start("visible");
   }, [controls]);
 
-  // Split name for letter animation
-  const name = "Deepak Maurya";
+  const name = "Abhishek Pandey";
   const nameLetters = name.split("");
 
   return (
@@ -150,31 +128,36 @@ export default function Hero() {
       id="home"
       initial="hidden"
       animate="visible"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 overflow-hidden relative"
+      className="min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden relative"
     >
-      {/* Animated background elements */}
-      <motion.div 
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
+      {/* 🔳 Dark Gray Faded Blobs */}
+      <motion.div
+        className="absolute top-10 left-10 w-80 h-80 bg-gray-700/20 rounded-full blur-3xl"
         variants={floatingVariant}
         animate="animate"
       />
-      <motion.div 
-        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+      <motion.div
+        className="absolute bottom-20 right-20 w-96 h-96 bg-gray-600/20 rounded-full blur-3xl"
         variants={floatingVariant}
         animate="animate"
-        style={{ animationDelay: "2s" }}
+      />
+      <motion.div
+        className="absolute top-1/2 right-1/4 w-72 h-72 bg-gray-500/20 rounded-full blur-3xl"
+        variants={floatingVariant}
+        animate="animate"
+      />
+      <motion.div
+        className="absolute bottom-10 left-1/4 w-64 h-64 bg-gray-400/20 rounded-full blur-3xl"
+        variants={floatingVariant}
+        animate="animate"
       />
 
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10"
         variants={container}
       >
-        {/* Animated greeting */}
-        <motion.div
-          variants={slideUpVariant}
-          className="mb-4"
-        >
-          <motion.span 
+        <motion.div variants={slideUpVariant} className="mb-4">
+          <motion.span
             className="text-blue-400 text-lg md:text-xl font-medium"
             variants={pulseVariant}
             animate="animate"
@@ -183,8 +166,7 @@ export default function Hero() {
           </motion.span>
         </motion.div>
 
-        {/* Animated Name with enhanced letter animation */}
-        <motion.h1 
+        <motion.h1
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           variants={slideUpVariant}
         >
@@ -196,10 +178,10 @@ export default function Hero() {
                 variants={letterVariant}
                 custom={index}
                 className="inline-block"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   color: "#60A5FA",
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
                 {letter === " " ? "\u00A0" : letter}
@@ -208,29 +190,23 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Tagline with typewriter effect */}
-        <motion.p 
+        <motion.p
           className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto"
           variants={slideUpVariant}
-          whileInView={{
-            opacity: [0, 1],
-            transition: { duration: 1.5 }
-          }}
         >
           Full Stack Developer | Cloud Enthusiast | DSA Learner
         </motion.p>
 
-        {/* Description */}
-        <motion.p 
+        <motion.p
           className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto"
           variants={slideUpVariant}
         >
-          I build modern, scalable web applications using React, Node.js, and cloud technologies. 
-          Currently pursuing BTech in IT and passionate about creating innovative solutions.
+          I build modern, scalable web applications using React, Node.js, and
+          cloud technologies. Currently pursuing BTech in computer science and
+          engineering and passionate about creating innovative solutions.
         </motion.p>
 
-        {/* Enhanced Buttons */}
-        <motion.div 
+        <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           variants={container}
         >
@@ -238,60 +214,61 @@ export default function Hero() {
             onClick={handleViewProjects}
             variants={buttonVariant}
             custom={0}
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-              transition: { duration: 0.3 }
+              transition: { duration: 0.3 },
             }}
             whileTap={{ scale: 0.95 }}
             className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
           >
-            <motion.span
-              className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{ zIndex: -1 }}
-            />
             View Projects
           </motion.button>
+
           <motion.button
             onClick={handleDownloadResume}
             variants={buttonVariant}
             custom={1}
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               borderColor: "#60A5FA",
-              transition: { duration: 0.3 }
+              transition: { duration: 0.3 },
             }}
             whileTap={{ scale: 0.95 }}
-            className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300 relative overflow-hidden group"
+            className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300"
           >
-            <motion.span
-              className="absolute inset-0 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-              style={{ zIndex: -1 }}
-            />
             Download Resume
           </motion.button>
         </motion.div>
 
-        {/* Enhanced Social Links */}
-        <motion.div 
-          className="flex justify-center space-x-8"
-          variants={container}
-        >
+        <motion.div className="flex justify-center space-x-8" variants={container}>
           {[
-            { icon: "github", url: "https://github.com/dkm4339", color: "#333" },
-            { icon: "linkedin", url: "https://linkedin.com/in/dkm4339", color: "#0077B5" },
-            { icon: "envelope", url: "mailto:deepakm124578@gmail.com", color: "#EA4335" }
+            {
+              icon: "github",
+              url: "https://github.com/Abhi03072003",
+              color: "#333",
+            },
+            {
+              icon: "linkedin",
+              url: "https://www.linkedin.com/in/abhishek-pandey-8452622b8/",
+              color: "#0077B5",
+            },
+            {
+              icon: "envelope",
+              url: "mailto:pandeyharsh73099@gmail.com",
+              color: "#EA4335",
+            },
           ].map((social, index) => (
             <motion.a
               key={social.icon}
               variants={socialVariant}
               custom={index}
-              whileHover={{ 
-                y: -8, 
+              whileHover={{
+                y: -8,
                 scale: 1.2,
                 color: social.color,
                 rotate: [0, -10, 10, 0],
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               whileTap={{ scale: 0.9 }}
               href={social.url}
@@ -304,14 +281,13 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ 
-            opacity: 1, 
+          animate={{
+            opacity: 1,
             y: 0,
-            transition: { delay: 2.5, duration: 0.5 }
+            transition: { delay: 2.5, duration: 0.5 },
           }}
         >
           <motion.div
@@ -321,8 +297,8 @@ export default function Hero() {
               transition: {
                 duration: 1.5,
                 repeat: Infinity,
-                ease: "easeInOut"
-              }
+                ease: "easeInOut",
+              },
             }}
           >
             <motion.div
@@ -332,8 +308,8 @@ export default function Hero() {
                 transition: {
                   duration: 1.5,
                   repeat: Infinity,
-                  ease: "easeInOut"
-                }
+                  ease: "easeInOut",
+                },
               }}
             />
           </motion.div>

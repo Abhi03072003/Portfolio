@@ -1,15 +1,15 @@
 export default function Projects() {
   const projects = [
     {
-      title: "Shortify URL Shortener",
+      title: "Safron URL Shortener",
       description:
         "A modern URL shortening service built with React and TinyURL API. Features include custom short URLs, analytics, and user-friendly interface.",
       image:
         "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["HTML", "TinyURL API", "CSS" ,"JavaScript"],
       techColor: "bg-blue-400/20 text-blue-400",
-      github: "https://github.com/dkm4339/Url-Shortner",
-      demo: "https://zippy-pegasus-ffd908.netlify.app/",
+      github: "https://github.com/Abhi03072003/Url-Safron",
+      demo: "",
     },
     {
       title: "AI Career Assistant",
@@ -19,8 +19,8 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["PostgreSQL", "Express.js", "React", "Node.js"],
       techColor: "bg-green-500/20 text-green-500",
-      github: "https://github.com/dkm4339/AI-Carrer-Coach",
-      demo: "https://github.com/dkm4339/AI-Carrer-Coach",
+      github: "https://github.com/Abhi03072003/AI-Carrer-Coach",
+      demo: "",
     },
     {
       title: "Bookstore Management System",
@@ -30,7 +30,7 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["Java", "HTML", "CSS", "MySQL"],
       techColor: "bg-yellow-500/20 text-yellow-500",
-      github: "https://github.com/dkm4339",
+      github: "https://github.com/Abhi03072003",
       demo: "",
     },
   ]; // ✅ This closing bracket was missing

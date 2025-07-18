@@ -121,9 +121,9 @@ export default function Education() {
             />
             <div>
               <h3 className="text-2xl font-semibold text-blue-400">
-                Bachelor of Technology - Information Technology
+                Bachelor of Technology - Computer Science and Engineering
               </h3>
-              <p className="text-slate-300">NIET, Greater Noida</p>
+              <p className="text-slate-300">LIET, Greater Noida</p>
             </div>
           </motion.div>
 

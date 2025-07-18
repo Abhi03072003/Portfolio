@@ -146,7 +146,7 @@ export default function Navigation() {
                 transition: { duration: 0.3 }
               }}
             >
-              Deepak Maurya
+              Abhishek Pandey
             </motion.span>
           </motion.div>
           
