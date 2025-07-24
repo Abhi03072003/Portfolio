@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -15,10 +16,16 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await emailjs.send(
+        "service_jdivfk3", // Your service ID
+        "template_7b05w7w", // Your template ID
+        formData,
+        "8Ax51CFj-VnBlPtfw" // Your user/public key
+      );
       setSubmitStatus('success');
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error("Email sending error:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -27,9 +34,9 @@ export default function Contact() {
   };
 
   const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = 'Resumes_.pdf';
-    link.download = 'Resumes_.pdf';
+    const link = document.createElement("a");
+    link.href = "Resumes_.pdf"; // Make sure this file exists in your public folder
+    link.download = "Resumes_.pdf";
     link.click();
   };
 
@@ -41,9 +48,9 @@ export default function Contact() {
       transition: {
         delay: i * 0.2,
         duration: 0.6,
-        ease: "easeOut"
-      }
-    })
+        ease: "easeOut",
+      },
+    }),
   };
 
   return (
@@ -84,7 +91,7 @@ export default function Contact() {
                     type={field === "email" ? "email" : "text"}
                     id={field}
                     name={field}
-                    value={formData[field]}
+                    value={formData[field as keyof typeof formData]}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     placeholder={`Your ${field}`}
@@ -93,7 +100,9 @@ export default function Contact() {
                 </div>
               ))}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -112,10 +121,10 @@ export default function Contact() {
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <p className="text-green-400 text-center">Message sent successfully!</p>
               )}
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <p className="text-red-400 text-center">Failed to send message. Please try again.</p>
               )}
             </form>
@@ -154,7 +163,7 @@ export default function Contact() {
                       </div>
                     </div>
                   </>
-                )
+                ),
               },
               {
                 title: "Follow Me",
@@ -163,7 +172,7 @@ export default function Contact() {
                     {[
                       { icon: "fab fa-github", href: "https://github.com/Abhi03072003" },
                       { icon: "fab fa-linkedin", href: "https://www.linkedin.com/in/abhishek-pandey-8452622b8/" },
-                      { icon: "fas fa-envelope", href: "mailto:pandeyharsh73099@gmail.com" }
+                      { icon: "fas fa-envelope", href: "mailto:pandeyharsh73099@gmail.com" },
                     ].map((item, i) => (
                       <a
                         key={i}
@@ -176,7 +185,7 @@ export default function Contact() {
                       </a>
                     ))}
                   </div>
-                )
+                ),
               },
               {
                 title: "Download Resume",
@@ -192,8 +201,8 @@ export default function Contact() {
                       <i className="fas fa-download mr-2"></i> Download Resume
                     </button>
                   </>
-                )
-              }
+                ),
+              },
             ].map((info, index) => (
               <motion.div
                 key={index}

@@ -12,7 +12,7 @@ export default function Projects() {
       demo: "",
     },
     {
-      title: "AI Career Assistant",
+      title: "AI Career coach - sharingan",
       description:
         "Full-stack PERN application providing personalized career guidance using AI. Features include resume analysis, skill recommendations, and career path suggestions.",
       image:
